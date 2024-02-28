@@ -1,0 +1,31 @@
+namespace ImageMerger
+{
+    runtimeclass ImageItem
+    {
+        ImageItem();
+        ImageItem(String itemName, String itemPath);
+
+        String ItemName;
+        String ItemPath;
+    }
+
+    runtimeclass HistoryItem
+    {
+        HistoryItem();
+        HistoryItem(String historyName, String historyPath, String historySize, String historyDate);
+
+        String HistoryName;
+        String HistoryPath;
+        String HistorySize;
+        String HistoryDate;
+    }
+
+    [default_interface]
+    runtimeclass MainWindow : Microsoft.UI.Xaml.Window
+    {
+        MainWindow();
+
+        Windows.Foundation.Collections.IObservableVector<Object> ImageItems;
+        Windows.Foundation.Collections.IObservableVector<Object> HistoryItems;
+    }
+}
